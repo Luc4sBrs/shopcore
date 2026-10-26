@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: shopcore-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: ./backend
+    repo: https://github.com/Luc4sBrs/shopcore
+    branch: master
+    plan: free
+    healthCheckPath: /api-docs
+    autoDeploy: true
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: FLYWAY_USER
+        sync: false
+      - key: FLYWAY_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRATION
+        value: "86400000"
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: SUPABASE_JWKS_URL
+        sync: false
