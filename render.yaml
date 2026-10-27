@@ -2,7 +2,7 @@ services:
   - type: web
     name: shopcore-backend
     runtime: docker
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     repo: https://github.com/Luc4sBrs/shopcore
     branch: master
